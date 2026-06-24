@@ -1,0 +1,4 @@
+[
+  { "id": "MA-9081", "cliente": "Sofía Valenzuela", "producto": "Suscripción Premium Marea", "monto": 1200, "status": "Completado", "fecha": "2026-06-23", "cantidad": 1 },
+  { "id": "MA-9080", "cliente": "Carlos Mendoza", "producto": "Licencia Corporativa", "monto": 3500, "status": "Completado", "fecha": "2026-06-23", "cantidad": 1 }
+]

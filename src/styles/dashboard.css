@@ -251,111 +251,6 @@ padding: 2rem;
 }
 
 
-/* Grilla de Métricas */
-.metrics-grid {
-display: grid;
-grid-template-columns: 1fr;
-gap: 1rem;
-}
-
-@media (min-width: 640px) {
-.metrics-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-
-@media (min-width: 1024px) {
-.metrics-grid {
-grid-template-columns: repeat(4, 1fr);
-}
-}
-
-/* Tarjeta de Métrica */
-.metric-card {
-background-color: var(--bg-card);
-padding: 1.5rem;
-border-radius: 1.25rem;
-border: 1px solid var(--border-color);
-display: flex;
-align-items: center;
-justify-content: space-between;
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-}
-
-.metric-data {
-display: flex;
-flex-direction: column;
-gap: 0.25rem;
-}
-
-.metric-label {
-font-size: 0.75rem;
-font-weight: 600;
-color: var(--text-muted);
-text-transform: uppercase;
-letter-spacing: 0.05em;
-}
-
-.metric-value {
-font-size: 1.75rem;
-font-weight: 800;
-color: var(--text-dark);
-margin: 0;
-}
-
-.metric-icon-box {
-padding: 1rem;
-border-radius: 1rem;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.metric-icon-box.orange {
-background-color: #fff7ed;
-color: var(--primary-color);
-}
-
-.metric-icon-box.blue {
-background-color: #eff6ff;
-color: #2563eb;
-}
-
-.metric-icon-box.green {
-background-color: #ecfdf5;
-color: var(--success-color);
-}
-
-/* Progress bar en la tarjeta de meta */
-.metric-progress-wrapper {
-width: 100%;
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
-}
-
-.metric-progress-header {
-display: flex;
-justify-content: space-between;
-font-size: 0.75rem;
-font-weight: 600;
-color: var(--text-muted);
-}
-
-.progress-track {
-width: 100%;
-height: 8px;
-background-color: #f1f5f9;
-border-radius: 9999px;
-overflow: hidden;
-}
-
-.progress-bar {
-height: 100%;
-background-color: var(--primary-color);
-border-radius: 9999px;
-transition: width 0.5s ease-out;
-}
 
 /* STREAMING_CHUNK: Panel operativo y gráficos... */
 .analytics-grid {
@@ -552,11 +447,14 @@ margin-bottom: 0;
 display: flex;
 gap: 0.5rem;
 width: 100%;
+box-sizing: border-box;
 }
 
 @media (min-width: 640px) {
 .table-search-bar {
-width: auto;
+width: 100%;
+max-width: 320px;
+margin-left: auto;
 }
 }
 

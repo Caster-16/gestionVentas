@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { User, Lock, Eye, EyeOff, AlertCircle, ArrowRight } from 'lucide-react';
 import '../styles/login.css';
+import datosAcceso from '../data/credenciales.json';
 
-export default function Login({ onLoginSuccess }) {
+export default function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,15 +21,20 @@ export default function Login({ onLoginSuccess }) {
 
     setLoading(true);
 
-    // Simulación de consulta a tu backend de Node.js
+    // Validación directa y rápida usando el JSON importado
+    // Agregamos un pequeño retraso de simulación visual para mantener el diseño del spinner
     setTimeout(() => {
       setLoading(false);
-      if (username.toLowerCase() === 'admin' && password === '123456') {
-        onLoginSuccess();
+
+      if (
+        username.trim().toLowerCase() === datosAcceso.usuario.toLowerCase() && 
+        password === datosAcceso.contrasena
+      ) {
+        onLogin(); // Éxito: Redirige al Dashboard de Administrador
       } else {
         setError('El usuario o la contraseña son incorrectos.');
       }
-    }, 1200);
+    }, 1000);
   };
 
   return (
@@ -65,7 +71,7 @@ export default function Login({ onLoginSuccess }) {
             <div className="input-group">
               <label>Usuario</label>
               <div className="input-wrapper">
-                <span className="input-icon"><User /></span>
+                <span className="input-icon"><User className="w-5 h-5" /></span>
                 <input
                   type="text"
                   value={username}
@@ -79,7 +85,7 @@ export default function Login({ onLoginSuccess }) {
             <div className="input-group">
               <label>Contraseña</label>
               <div className="input-wrapper">
-                <span className="input-icon"><Lock /></span>
+                <span className="input-icon"><Lock className="w-5 h-5" /></span>
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
@@ -92,13 +98,13 @@ export default function Login({ onLoginSuccess }) {
                   onClick={() => setShowPassword(!showPassword)}
                   className="btn-toggle-password"
                 >
-                  {showPassword ? <EyeOff /> : <Eye />}
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
               </div>
             </div>
 
             <div className="forgot-password-link">
-              <a href="#recuperar" onClick={(e) => { e.preventDefault(); setError('Usa las credenciales demo: admin / 123456'); }}>
+              <a href="#recuperar" onClick={(e) => { e.preventDefault(); setError('Por favor, contacta al administrador de la base de datos.'); }}>
                 ¿Olvidó su Contraseña?
               </a>
             </div>
@@ -119,10 +125,6 @@ export default function Login({ onLoginSuccess }) {
                 </>
               )}
             </button>
-
-            <div className="demo-credentials-badge">
-               <strong>Credenciales:</strong> admin / 123456
-            </div>
           </form>
         </div>
 

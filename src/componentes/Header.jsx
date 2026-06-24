@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/header.css';
+import '../styles/header.css'; 
 import { Menu, Bell } from 'lucide-react';
 
 export default function Header({ 
@@ -10,7 +10,6 @@ export default function Header({
   return (
     <header className="main-header">
       <div className="header-left">
-        {/* Botón de hamburguesa visible solo en dispositivos móviles */}
         <button 
           onClick={() => setShowMobileSidebar(true)} 
           className="btn-menu-toggle md:hidden"
@@ -23,7 +22,6 @@ export default function Header({
         </div>
       </div>
       
-      {}
       <div className="header-right">
         <div className="notification-wrapper">
           <button onClick={() => setNotificationCount(0)} className="btn-notification">

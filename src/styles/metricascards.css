@@ -1,0 +1,91 @@
+/* Contenedor principal en cuadrícula (Grid) */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: center; 
+}
+
+/* Tarjeta contenedora individual */
+.metric-card {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  text-align: center;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta */
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Títulos de las tarjetas */
+.metric-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Valores principales (Montos / Cantidades) */
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.75rem 0;
+  color: #111827;
+}
+
+/* Variación de color azul para los productos vendidos */
+.metric-value.blue {
+  color: #2563eb;
+}
+
+/* Textos informativos pequeños */
+.metric-subtext {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+/* Barra de progreso - Fondo */
+.progress-bar-bg {
+  background-color: #f3f4f6;
+  height: 8px;
+  border-radius: 9999px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: auto; /* Mantiene la barra al fondo si las tarjetas crecen */
+}
+
+/* Barra de progreso - Relleno */
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s ease-out;
+}
+
+/* Colores dinámicos para las barras de progreso */
+.progress-bar-fill.green {
+  background-color: #10b981;
+}
+
+.progress-bar-fill.orange {
+  background-color: #f59e0b;
+}
+
+/*Para el porcentaje alcanzado debaj de la barra */
+.metric-percentage {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
