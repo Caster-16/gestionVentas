@@ -1,0 +1,418 @@
+/* Contenedor general de la página de Login */
+.login-page-container {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Tarjeta contenedora de Login */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 100%;
+  max-width: 896px;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .login-card {
+    flex-direction: row;
+  }
+}
+
+/* --- LADO IZQUIERDO: FORMULARIO --- */
+.login-form-side {
+  width: 100%;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .login-form-side {
+    width: 50%;
+    padding: 3rem;
+    order: 1;
+  }
+}
+
+/* Logo Animado MAREA */
+.login-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo-orbit {
+  position: absolute;
+  left: -1rem;
+  top: -0.25rem;
+  width: 3.5rem;
+  height: 2.5rem;
+  color: #DF5B33;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.logo-text {
+  font-size: 1.875rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #1e293b;
+  position: relative;
+  z-index: 10;
+  font-family: monospace;
+}
+
+.logo-text span {
+  color: #1e293b;
+}
+
+/* Textos de Cabecera */
+.login-header-text {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-header-text h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.login-header-text p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-top: 0.25rem;
+}
+
+/* Formulario e Inputs */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding-left: 0.875rem;
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+}
+
+.input-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-wrapper input:hover {
+  background-color: #e2e8f0;
+}
+
+.input-wrapper input:focus {
+  background-color: #ffffff;
+  border-color: #DF5B33;
+  box-shadow: 0 0 0 2px rgba(223, 91, 51, 0.2);
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-toggle-password:hover {
+  color: #475569;
+}
+
+.btn-toggle-password svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Link de Olvido Contraseña */
+.forgot-password-link {
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.forgot-password-link a {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.forgot-password-link a:hover {
+  color: #DF5B33;
+}
+
+/* Alerta de Error */
+.login-error-alert {
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  color: #b91c1c;
+  border-radius: 0 0.5rem 0.5rem 0;
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.icon-error {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Botón Ingresar */
+.btn-submit-login {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #DF5B33;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(223, 91, 51, 0.2);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.btn-submit-login:hover {
+  background-color: #c94924;
+  box-shadow: 0 10px 15px -3px rgba(223, 91, 51, 0.3);
+}
+
+.btn-submit-login:active {
+  transform: scale(0.98);
+}
+
+.btn-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Spinner Loader */
+.spinner-loader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.opacity-25 { opacity: 0.25; }
+.opacity-75 { opacity: 0.75; }
+
+/* Demo Badge */
+.demo-credentials-badge {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  color: #b45309;
+  text-align: center;
+}
+
+/* --- LADO DERECHO: BANNER --- */
+.login-banner-side {
+  width: 100%;
+  background-color: #DF5B33;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .login-banner-side {
+    width: 50%;
+    order: 2;
+  }
+}
+
+.banner-circle-bg-1 {
+  position: absolute;
+  right: -4rem;
+  bottom: -4rem;
+  width: 16rem;
+  height: 16rem;
+  background-color: #ea580c;
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.banner-circle-bg-2 {
+  position: absolute;
+  left: -4rem;
+  top: -4rem;
+  width: 16rem;
+  height: 16rem;
+  background-color: #fbbf24;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Badge del Logo de Ventas */
+.banner-logo-badge {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1.5rem;
+}
+
+.badge-glow {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(16px);
+  transition: transform 0.3s;
+}
+
+.banner-logo-badge:hover .badge-glow {
+  transform: scale(1.1);
+}
+
+.badge-logo-container {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+}
+
+.badge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Textos del Banner */
+.banner-text-content {
+  position: relative;
+  z-index: 10;
+  max-width: 24rem;
+}
+
+.banner-text-content h2 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  line-height: 1.25;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.banner-divider {
+  width: 4rem;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0.75rem auto;
+  border-radius: 9999px;
+}
+
+.banner-text-content p {
+  font-size: 0.875rem;
+  color: #ffedd5;
+  font-weight: 300;
+  line-height: 1.625;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

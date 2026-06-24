@@ -1,0 +1,80 @@
+/* Banner de Bienvenida */
+.welcome-banner {
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+border-radius: 1.5rem;
+padding: 1.5rem;
+color: white;
+position: relative;
+overflow: hidden;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 640px) {
+.welcome-banner {
+padding: 2rem;
+}
+}
+
+.welcome-banner-glow {
+position: absolute;
+right: -2.5rem;
+bottom: -2.5rem;
+width: 12rem;
+height: 12rem;
+background-color: var(--primary-color);
+border-radius: 50%;
+opacity: 0.25;
+filter: blur(40px);
+}
+
+.welcome-content {
+position: relative;
+z-index: 10;
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+max-width: 36rem;
+
+margin: 0 auto;        
+align-items: center;   
+text-align: center;
+
+}
+
+.welcome-content h2 {
+font-size: 1.5rem;
+font-weight: 700;
+margin: 0;
+}
+
+.welcome-content p {
+font-size: 0.875rem;
+color: #cbd5e1;
+line-height: 1.5;
+margin: 0;
+
+}
+
+.btn-welcome-action {
+align-self: center;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.625rem 1.25rem;
+background-color: var(--primary-color);
+color: white;
+border: none;
+border-radius: 0.75rem;
+font-weight: 600;
+font-size: 0.875rem;
+cursor: pointer;
+transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-welcome-action:hover {
+background-color: var(--primary-hover);
+}
+
+.btn-welcome-action:active {
+transform: scale(0.98);
+}
